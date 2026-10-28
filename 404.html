@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <meta name="robots" content="noindex">
+  <title>404 — Pagina niet gevonden | Riley Berends</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #fafaf8;
+      --text: #222222;
+      --muted: #858585;
+      --border: #e5e5e1;
+      --blue: #5576dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .content {
+      width: 100%;
+      animation: verschijnen 0.9s ease both;
+    }
+
+    /* 404 met smiley */
+    .error-code {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.04em;
+      margin: 0;
+      font-size: clamp(6rem, 22vw, 10rem);
+      font-weight: 600;
+      letter-spacing: -0.07em;
+      line-height: 1;
+    }
+
+    .smiley {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+      width: 0.69em;
+      height: 0.69em;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: zweven 2.5s ease-in-out infinite;
+    }
+
+    .smiley::before,
+    .smiley::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      width: 9%;
+      height: 9%;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .smiley::before {
+      left: 30%;
+    }
+
+    .smiley::after {
+      right: 30%;
+    }
+
+    .mond {
+      position: absolute;
+      top: 44%;
+      left: 30%;
+      width: 40%;
+      height: 23%;
+      border-bottom: 3px solid white;
+      border-radius: 0 0 50% 50%;
+    }
+
+    h1 {
+      margin: 30px 0 0;
+      font-size: clamp(1.4rem, 5vw, 1.9rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .description {
+      max-width: 360px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Terugknop */
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+
+    .home-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 23px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: white;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .home-button:hover {
+      transform: translateY(-3px);
+      border-color: #d5d5d0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .home-button:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 4px;
+    }
+
+    .arrow {
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      padding: 18px 20px 26px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* Animaties */
+    @keyframes verschijnen {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zweven {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-code {
+        font-size: clamp(5rem, 23vw, 7rem);
+      }
+
+      .description {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="content">
+
+      <div class="error-code" aria-label="404">
+        <span aria-hidden="true">4</span>
+        <span class="smiley" aria-hidden="true">
+          <span class="mond"></span>
+        </span>
+        <span aria-hidden="true">4</span>
+      </div>
+
+      <h1>Oeps, pagina niet gevonden.</h1>
+
+      <p class="description">
+        Deze pagina bestaat niet of is misschien
+        verplaatst. Geen zorgen, je kunt altijd
+        terug naar het begin.
+      </p>
+
+      <div class="actions">
+        <a class="home-button" href="/">
+          <span class="arrow" aria-hidden="true">←</span>
+          Terug naar home
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Riley Berends · Gemaakt met heel veel schik.
+  </footer>
+</body>
+</html>
